@@ -21,24 +21,49 @@ body{
     font-family: 'Roboto', sans-serif;
 
 }
-/* helper classes*/
-
-
-
-/* end helper classes*/ 
-
-
-/* clearfix */ 
-
-.clearfix::before, .clearfix::after {
-
+/* helper classes */
+a {
+    text-decoration: none;
+  }
+  .text-white {
+    color: var(--mainWhite);
+  }
+  .text-center {
+    text-align: center;
+  }
+  .text-primary {
+    color: var(--primaryColor);
+  }
+  /* end of helper classes */
+  
+  /* clearfix */
+  .clearfix::before,
+  .clearfix::after {
     content: "";
     clear: both;
-}
-
-/* end clearfix */
-
-
+    display: table;
+  }
+  /* end of clearfix */
+  
+  /* Globals */
+  .section-center {
+    padding: 4rem 0;
+    width: 80vw;
+    max-width: 1170px;
+    margin: 0 auto;
+  }
+  .section-subtitle {
+    font-size: 2rem;
+    font-family: var(--macondoText);
+    letter-spacing: var(--letterSpacing);
+    text-transform: uppercase;
+    color: var(--secondaryColor);
+  }
+  .section-title {
+    font-size: 3rem;
+    text-transform: uppercase;
+  }
+  /* end of Globals */
 .header{
 
     background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(./images/main-bcg.jpg) center/cover no-repeat;
@@ -52,7 +77,6 @@ body{
     transform: translate(-50%, -50% );
     text-align: center;
 }
-
 .banner .banner-subtitle{
     font-size: 2.3rem;
     font-family: var(--macondoText);
@@ -61,7 +85,6 @@ body{
 
     
 }
-
 .banner .banner-title{
     font-size: 3.3rem;
     color: var(--mainWhite);
@@ -69,7 +92,6 @@ body{
     margin-top: 10px;
     animation: leftslide 5s ease-in-out 1;
 }
-
 .main-btn, .banner-btn {
  
         display: inline-block;
@@ -77,43 +99,36 @@ body{
         padding: 0.8rem 1.2rem;
         text-transform: uppercase;
         font-weight: bold;
-        outline: 0.3rem solid var(--secondaryColor);
+        outline: 0.2rem solid var(--secondaryColor);
         outline-offset: 4px;
         transition: var(--mainTransition);
         text-decoration: none;
         color: black;
-        margin-top: 20px;
-
-
+        margin-top: 2rem;
+        cursor: pointer;
 }
-.main-btn, .banner-btn:hover {
+.main-btn:hover, .banner-btn:hover {
     color: var(--mainWhite);
     opacity: 0.7;
-
 }
-
-
 .banner-btn {
     padding: 1.3rem 1.5rem;
     margin-top:20px ;
     animation: show  5s ease-in-out 1;
 }
-
 /* animation */ 
 @keyframes show   { 
     0% {
         transform: scale(2);
-        opacity: 0.7;
+        opacity: 0;
     }
 
     100% {
         transform: scale(1);
-        opacity: 0.7;
+        opacity: 1;
        
     }
 }
-
-
 @keyframes rightslide   { 
     0% {
         transform: translateX(1000px) ;
@@ -139,9 +154,7 @@ body{
     }
 
 }
-
-
-    @keyframes leftslide   { 
+@keyframes leftslide   { 
         0% {
             transform: translateX(-1000px) ;
             
@@ -164,16 +177,9 @@ body{
             transform: translateX(0px) ;
            
         }
-    
-
-
-}
-
-
+    }
 /*end animation */
-
 /* content divder */ 
-
 .contant-divder {
     height: 0.5rem;
     background: linear-gradient(to left, 
@@ -181,34 +187,24 @@ body{
     var(--secondaryColor),
     var(--primaryColor));
 }
-
 /* end content divder */ 
-
-
-
 /* spacails */ 
-
 .specials {
     background: var(--mainGrey);
 
 }
-
 .special {
     padding: 2.4rem 0;
     text-align: center;
     transition: var(--mainTransition);
-
 }
-
 .special-icon {
    font-size: 2.5rem;
    margin-bottom: 2.5rem;
    transition: var(--mainTransition);
    display: inline-block;
    transition: var(--mainTransition);
-
 }
-
 .special-title {
 
     font-size: 0.9rem;
@@ -219,29 +215,21 @@ body{
     color: var(--secondaryColor);
     transition: var(--mainTransition);
 }
-
 .special-text {
     max-width: 13rem;
     margin: 0 auto;
     transition: var(--mainTransition);
 }
-
 .special:hover {
     background: var(--secondaryColor);
-
 }
-
 .special:hover .special-title {
     color: var(--mainWhite);
-
 }
-
 .special:hover .special-icon {
     
     transform:translateY(-5px) ;
 }
-
-
 @media screen and (min-width: 576px) {
     .special {
         width: 50%;
@@ -249,7 +237,6 @@ body{
     }
     
 }
-
 @media screen and (min-width: 1200px) {
     .special {
         width: 25%;
@@ -257,13 +244,8 @@ body{
     }
     
 }
-
-
 /* end spacails */
-
-
 /* About */
-
 .section-center {
     padding: 4rem 0;
     width: 80vw;
@@ -274,79 +256,54 @@ body{
     width: 100%;
     display: block;
     transition: var(--mainTransition);
-    
-
 }
-
-
-
 .about-img, .about-info{
     padding: 2rem 0;
 } 
-
 .about-picture-container{
     background: var(--secondaryColor);
     border: 0.5rem solid var(--secondaryColor);
     border-radius: 1rem;
     overflow: hidden;
 }
-
 .about-picture-container:hover .about-picture{
     opacity: 0.7;
     transform: scale(1.2);
-}
-
-.section-subtitle{
-    font-size: 2rem;
-    font-family: var(--macondoText);
-    letter-spacing: var(--letterSpacing);
-    text-transform: uppercase;
-    color: var(--secondaryColor);
-}
-
-.section-title{
-    font-size: 3rem;
-    text-transform: uppercase;
-
 }
 .about-text{
     margin: 1rem 0;
     max-width: 26rem;
 }
-
 @media screen and (min-width: 992px) {
     .about-img, .about-info {
-
         float: left;
         width: 50%;
         padding: 2rem;
-
     }
-    
 }
 /*  end About */
-
 /* products */
 .products{
     background: var(--mainDark);
 }
-.product-info, .products-invontary{
+.products-info, .products-invontary{
     padding: 2rem 0;
-}
-.section-title1{
-    color: var(--mainWhite);
 }
 .products-text{
     color: var(--mainWhite);
     max-width: 20rem;
     margin: 1rem 0;
 }
+/* maqan */
+.product{
+    padding: 2rem 0;
+}
+/* maqan */
 .product-img{
     width: 100%;
     display: block;
     border-radius: 0.4rem;
     margin-bottom: 2rem ;
-
 }
 .product-title{
     color: var(--mainWhite);
@@ -359,46 +316,36 @@ body{
     letter-spacing: var(--letterSpacing);
     font-family: var(--macondoText);
 }
-
-
 @media screen and (min-width: 768px) {
      .product{
         float: left;
         width: 50%;
         padding: 2rem 1rem;
     }
-    
-    .product-info{
+    .products-info{
         padding: 2rem 1rem;
     }
 }
-
+/* coma dhered tirtirey */
 @media screen and (min-width: 992px) {
     .product{
-
-       width: 33.3%;
+        width: 33.3%;
   }
 }
-
 @media screen and (min-width: 1200px) {
-    .product-info{
-
-       float: left;
+    .products-info{
+        float: left;
        width: 30%;
-       padding: 2rem 1rem;
-
-   }
+      /* padding dheread tirtirey */
+    }
    .products-invontary{
        float: left;
        width: 70%;
-
-   }
+    }
    .product{
-       padding: 1.5rem 1rem 0 1rem;
+    padding: 1.5rem 1rem 0 1rem;
    }
 }
-
-
 /* end products */
 
 
