@@ -4,8 +4,6 @@
     padding: 0px;
     box-sizing: border-box;
 } 
-
-
 :root {
     --macondoText: 'Macondo', cursive;
     --primaryColor: #698f3f;
@@ -16,10 +14,8 @@
     --mainTransition: all 0.3s ease-in-out;
     --letterSpacing: 0.5rem;
 }
-
 body{
     font-family: 'Roboto', sans-serif;
-
 }
 /* helper classes */
 a {
@@ -35,7 +31,6 @@ a {
     color: var(--primaryColor);
   }
   /* end of helper classes */
-  
   /* clearfix */
   .clearfix::before,
   .clearfix::after {
@@ -44,7 +39,6 @@ a {
     display: table;
   }
   /* end of clearfix */
-  
   /* Globals */
   .section-center {
     padding: 4rem 0;
@@ -65,7 +59,6 @@ a {
   }
   /* end of Globals */
 .header{
-
     background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(./images/main-bcg.jpg) center/cover no-repeat;
     min-height: 100vh;
     position: relative;
@@ -82,8 +75,6 @@ a {
     font-family: var(--macondoText);
     color: var(--secondaryColor);
     animation: rightslide 5s ease-in-out 1;
-
-    
 }
 .banner .banner-title{
     font-size: 3.3rem;
@@ -93,17 +84,16 @@ a {
     animation: leftslide 5s ease-in-out 1;
 }
 .main-btn, .banner-btn {
- 
-        display: inline-block;
-        background: var(--secondaryColor);
-        padding: 0.8rem 1.2rem;
-        text-transform: uppercase;
-        font-weight: bold;
-        outline: 0.2rem solid var(--secondaryColor);
-        outline-offset: 4px;
-        transition: var(--mainTransition);
-        text-decoration: none;
-        color: black;
+    display: inline-block;
+    background: var(--secondaryColor);
+    padding: 0.8rem 1.2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    outline: 0.2rem solid var(--secondaryColor);
+    outline-offset: 4px;
+    transition: var(--mainTransition);
+    text-decoration: none;
+    color: black;
         margin-top: 2rem;
         cursor: pointer;
 }
