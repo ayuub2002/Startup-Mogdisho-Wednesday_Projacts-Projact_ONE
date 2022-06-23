@@ -4,8 +4,6 @@
     padding: 0px;
     box-sizing: border-box;
 } 
-
-
 :root {
     --macondoText: 'Macondo', cursive;
     --primaryColor: #698f3f;
@@ -16,14 +14,126 @@
     --mainTransition: all 0.3s ease-in-out;
     --letterSpacing: 0.5rem;
 }
-
 body{
     font-family: 'Roboto', sans-serif;
+}
+/* nav-btn */
+.nav-btn {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    color: var(--secondaryColor);
+    margin: 1rem 1.3rem;
+    font-size: 2rem;
+    animation: bounce 2s ease-in-out infinite;
+    cursor: pointer;
+}
+@keyframes bounce {
+    0% {
+    transform: scale(1);
+    }
+    50% {
+    transform: scale(1.5);
+    }
+    100% {
+    transform: scale(1);
+    }
+}
+   
+/* end of nav btn */
+/* navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    background: var(--mainGrey);
+    transition: var(--mainTransition);
+    padding-top: 1rem;
+    padding-left: 2rem;
+    transition: var(--main Transition);
+    transform: translateX(-100%);
+}
+.showNav{
+    transform: translateX(0);
+}
+.nav-close{
+font-size: 2rem;
+cursor: pointer;
+}
+.nav-items{ 
+list-style-type: none;
+}
+.nav-items{
+    list-style-type: none;
+    }
+.nav-link{
+    display: block;
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: var(--secondaryColor);
+    transition: var(--mainTransition);
+}
+.nav-link:hover{
+color: var(--mainDark);
+padding-left: 0.5rem;
+}
+/* end of navbar */
+/* scereen qurey */
 
+@media screen and (min-width: 768px){
+    .navbar{
+        width: 30vh;
+        max-width: 20rem;
+    }
 }
 
+/* scereen qurey */
+/* helper classes */
+a {
+    text-decoration: none;
+  }
+  .text-white {
+    color: var(--mainWhite);
+  }
+  .text-center {
+    text-align: center;
+  }
+  .text-primary {
+    color: var(--primaryColor);
+  }
+  /* end of helper classes */
+  /* clearfix */
+  .clearfix::before,
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  /* end of clearfix */
+  /* Globals */
+  .section-center {
+    padding: 4rem 0;
+    width: 80vw;
+    max-width: 1170px;
+    margin: 0 auto;
+  }
+  .section-subtitle {
+    font-size: 2rem;
+    font-family: var(--macondoText);
+    letter-spacing: var(--letterSpacing);
+    text-transform: uppercase;
+    color: var(--secondaryColor);
+  }
+  .section-title {
+    font-size: 3rem;
+    text-transform: uppercase;
+  }
+  /* end of Globals */
 .header{
-
     background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(./images/main-bcg.jpg) center/cover no-repeat;
     min-height: 100vh;
     position: relative;
@@ -35,41 +145,374 @@ body{
     transform: translate(-50%, -50% );
     text-align: center;
 }
-
 .banner .banner-subtitle{
     font-size: 2.3rem;
     font-family: var(--macondoText);
     color: var(--secondaryColor);
-
-    
+    animation: rightslide 5s ease-in-out 1;
 }
-
 .banner .banner-title{
     font-size: 3.3rem;
     color: var(--mainWhite);
     margin-bottom: 20px;
     margin-top: 10px;
+    animation: leftslide 5s ease-in-out 1;
 }
-
-.banner-btn {
-    text-decoration: none;
-    background-color: var(--secondaryColor);
-    padding: 0.8rem 3.3rem;
-    font-size: 1.3rem;
-    color: var(--mainGrey);
-}
-
-.banner-btn:hover{
-    opacity: 0.7;
+.main-btn, .banner-btn {
+    display: inline-block;
+    background: var(--secondaryColor);
+    padding: 0.8rem 1.2rem;
+    text-transform: uppercase;
+    font-weight: bold;
     outline: 0.2rem solid var(--secondaryColor);
-    outline-offset: 0.4rem;
+    outline-offset: 4px;
     transition: var(--mainTransition);
+    text-decoration: none;
+    color: black;
+        margin-top: 2rem;
+        cursor: pointer;
+}
+.main-btn:hover, .banner-btn:hover {
+    color: var(--mainWhite);
+    opacity: 0.7;
+}
+.banner-btn {
+    padding: 1.3rem 1.5rem;
+    margin-top:20px ;
+    animation: show  5s ease-in-out 1;
+}
+/* animation */ 
+@keyframes show   { 
+    0% {
+        transform: scale(2);
+        opacity: 0;
+    }
 
-}   
+    100% {
+        transform: scale(1);
+        opacity: 1;
+       
+    }
+}
+@keyframes rightslide   { 
+    0% {
+        transform: translateX(1000px) ;
+        
+    }
+
+    50% {
+        
+        transform: translateX(-200px) ;
+       
+    }
+
+    75% {
+        
+        transform: translateX(50px) ;
+       
+    }
+
+    100% {
+        
+        transform: translateX(0px) ;
+       
+    }
+
+}
+@keyframes leftslide   { 
+        0% {
+            transform: translateX(-1000px) ;
+            
+        }
+    
+        50% {
+            
+            transform: translateX(200px) ;
+           
+        }
+    
+        75% {
+            
+            transform: translateX(-50px) ;
+           
+        }
+    
+        100% {
+            
+            transform: translateX(0px) ;
+           
+        }
+    }
+/*end animation */
+/* content divder */ 
+.contant-divder {
+    height: 0.5rem;
+    background: linear-gradient(to left, 
+    var(--primaryColor),
+    var(--secondaryColor),
+    var(--primaryColor));
+}
+/* end content divder */ 
+/* spacails */ 
+.specials {
+    background: var(--mainGrey);
+
+}
+.special {
+    padding: 2.4rem 0;
+    text-align: center;
+    transition: var(--mainTransition);
+}
+.special-icon {
+   font-size: 2.5rem;
+   margin-bottom: 2.5rem;
+   transition: var(--mainTransition);
+   display: inline-block;
+   transition: var(--mainTransition);
+}
+.special-title {
+
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: var(--letterSpacing);
+    margin-bottom: 1.3rem;
+    color: var(--secondaryColor);
+    transition: var(--mainTransition);
+}
+.special-text {
+    max-width: 13rem;
+    margin: 0 auto;
+    transition: var(--mainTransition);
+}
+.special:hover {
+    background: var(--secondaryColor);
+}
+.special:hover .special-title {
+    color: var(--mainWhite);
+}
+.special:hover .special-icon {
+    
+    transform:translateY(-5px) ;
+}
+@media screen and (min-width: 576px) {
+    .special {
+        width: 50%;
+        float: left;
+    }
+    
+}
+@media screen and (min-width: 1200px) {
+    .special {
+        width: 25%;
+        /*float: left;*/
+    }
+    
+}
+/* end spacails */
+/* About */
+.section-center {
+    padding: 4rem 0;
+    width: 80vw;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+.about-picture{
+    width: 100%;
+    display: block;
+    transition: var(--mainTransition);
+}
+.about-img, .about-info{
+    padding: 2rem 0;
+} 
+.about-picture-container{
+    background: var(--secondaryColor);
+    border: 0.5rem solid var(--secondaryColor);
+    border-radius: 1rem;
+    overflow: hidden;
+}
+.about-picture-container:hover .about-picture{
+    opacity: 0.7;
+    transform: scale(1.2);
+}
+.about-text{
+    margin: 1rem 0;
+    max-width: 26rem;
+}
+@media screen and (min-width: 992px) {
+    .about-img, .about-info {
+        float: left;
+        width: 50%;
+        padding: 2rem;
+    }
+}
+/*  end About */
+/* products */
+.products{
+    background: var(--mainDark);
+}
+.products-info, .products-invontary{
+    padding: 2rem 0;
+}
+.products-text{
+    color: var(--mainWhite);
+    max-width: 20rem;
+    margin: 1rem 0;
+}
+/* maqan */
+.product{
+    padding: 2rem 0;
+}
+/* maqan */
+.product-img{
+    width: 100%;
+    display: block;
+    border-radius: 0.4rem;
+    margin-bottom: 2rem ;
+}
+.product-title{
+    color: var(--mainWhite);
+    text-transform: uppercase;
+    letter-spacing: var(--letterSpacing);
+    margin-bottom: 1rem;
+}
+.product-price{
+    color: var(--secondaryColor);
+    letter-spacing: var(--letterSpacing);
+    font-family: var(--macondoText);
+}
+@media screen and (min-width: 768px) {
+     .product{
+        float: left;
+        width: 50%;
+        padding: 2rem 1rem;
+    }
+    .products-info{
+        padding: 2rem 1rem;
+    }
+}
+/* coma dhered tirtirey */
+@media screen and (min-width: 992px) {
+    .product{
+        width: 33.3%;
+  }
+}
+@media screen and (min-width: 1200px) {
+    .products-info{
+        float: left;
+       width: 30%;
+      /* padding dheread tirtirey */
+    }
+   .products-invontary{
+       float: left;
+       width: 70%;
+    }
+   .product{
+    padding: 1.5rem 1rem 0 1rem;
+   }
+}
+/* end products */
+
+
+/* Contact */
+.contact{
+    padding: 2rem;
+}
+.contact-item{
+    margin-bottom: 3rem ;
+}
+.contact-title{
+    color: var(--secondaryColor);
+    text-transform: uppercase;
+    letter-spacing: calc(var(--letterSpacing)*2);
+    font-family: var(--macondoText);
+    font-size: 1.6rem;
+    margin-bottom: 1.6rem;
+}
+.contact-text{
+    text-transform: uppercase;
+}
+.form-control{
+    display: block;
+    border: none;
+    border-bottom: 2px solid var(--secondaryColor);
+    outline:none ;
+    width: 100%;
+    font-size: 0.85rem;
+    margin: 2rem 0;
+    padding: 1.3rem 0;
+    font-weight: bold;
+}
+.form-control::placeholder{
+    text-transform: uppercase;
+    color: var(--secondaryColor);
+    letter-spacing: var(--letterSpacing);
+
+}
+/* desktop */
+@media screen and (min-width: 992px) {
+    .contact-info, .contact-form{
+        float:left ;
+        width: 50%;
+        padding: 0 1rem;  
+  }
+  .contact-info{
+      padding-top:  3rem;
+  }
+}
+/* end  desktop */
+
+/* Footer */
+.footer{
+    background:var(--mainDark);
+    text-align: center;  
+}
+.social-icon{
+    color: var(--mainWhite);
+    font-size: 1.3rem;
+    margin-right: 1.3rem;
+    transition: var(--mainTransition);
+}
+.social-icon:hover{
+    color: var(--secondaryColor);
+}
+.footer-text{
+    text-transform: uppercase;
+    color: var(--mainWhite);
+    letter-spacing: var(--letterSpacing);
+    margin-top: 1rem;
+    font-size: 0.85rem;
+}
+/* end of  Footer */
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* end of  Contact */
 
 
 
